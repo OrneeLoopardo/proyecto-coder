@@ -1,7 +1,13 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Montserrat Alternates', sans-serif;
+  text-decoration: none;
+}
+
 .header {
   background-color: aliceblue;
 }
-.header .header__container {
+.header__container {
   max-width: 1100px;
   width: 95%;
   padding: 20px 0;
@@ -10,9 +16,11 @@
   align-items: center;
   margin: 0 auto;
 }
-.header .header__container .header__logo {
+.header__logo {
   font-size: 40px;
   font-weight: 700;
+  font-family: 'Montserrat Alternates', sans-serif;
+  color: black;
 }
 .header .header__container .header__navbar {
   display: flex;
@@ -25,4 +33,4 @@
   color: #fff;
   background-color: blue;
   padding: 8px 16px;
-}/*# sourceMappingURL=Header.css.map */
+}

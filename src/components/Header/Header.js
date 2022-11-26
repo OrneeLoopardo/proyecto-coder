@@ -1,12 +1,12 @@
-import './Header.scss'
+import './Header.css';
 
 export const Header = () => {
 
     return (
         <header className="header">
             <div className="header__container">
-                <div className='header__logo'>
-                    <a><img src='../public/assets/logo.png'></img></a>
+                <div className='header__logo'> 
+                    <p>Eskbia2</p> 
                 </div>
 
                 <nav className="header__navbar">
