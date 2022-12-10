@@ -1,60 +1,40 @@
-import {useState, useEffect} from 'react';
-import Counter from "../Counter/Counter";
-import "./ItemListContainer.css";
-import {products} from "../../productsMock";
-import ProductsCard from "../ProductsCard/ProductsCard";
-// import CustomButton from "../CustomButton/CustomButton"
+import { useState, useEffect } from "react"
+import "./ItemListContainer.css"
+import { products } from "../../productsMock"
+import ItemList from "../ItemList/ItemList"
+import ItemCount from "../ItemCount/ItemCount"
+import {useParams} from "react-router-dom"
 
-const ItemListContainer = ( { greeting } ) => {
-
-  const [isDark, setIsDark] = useState(false)
-  const [num, setNum] = useState(0)
+const ItemListContainer = () => {
+  const {categoryName} = useParams()
 
   const [items, setItems] = useState([])
 
-  const tooggleMode = () => {
-    setIsDark( !isDark )
-  }
+  useEffect(() => {
+    const productosFiltered = products.filter(
+      (productos) => productos.category === categoryName
+    )
 
-//  useEffect(()=>{
-//    console.log("Hola dentro del primer efecto");
-//  }) // SIN ARREGLO DE DEPENDENCIA
-//
-//  useEffect(()=>{
-//    console.log("Hola desde el efecto con array de dependencia vacio");
-//  }, []) // ARREGLO DE DEPENDENCIA VACIO
-//
-//  useEffect(()=>{
-//    console.log("Hola desde el efecto con array de dependencia a la escucha de NUM");
-//  }, [ num ]) // ARREGLO DE DEPENDENCIA A LA ESCUCHA DE UNA VARIABLE
+    const task = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve(categoryName ? productosFiltered : products)
+      }, 500)
+    })
 
-  const onAdd = () => {
-    console.log("hola");
-  }
+    task
+      .then((res) => {
+        setItems(res)
+      })
+      .catch((err) => {
+        console.log("se rechazo")
+      })
 
-useEffect( () => {
-  const task = new Promise((resolve, reject)=>{
-    setTimeout(()=>{
-      resolve(products)
-    }, 2000)
-  })
-
-task
-  .then( (res) => {setItems(res) } )
-  .catch( (err) => {console.log(err) } )
-}, [] )
-
-console.log(items);
+  }, [categoryName])
 
   return (
-    <div className={ isDark ? "dark" : "light"}>
-        {
-          items.map((element) => {
-            return (
-              <ProductsCard key={element.name} element={element} />
-            );
-          })
-        }
+    <div className="light">
+      <ItemCount initial={1} stock={7} />
+      <ItemList items={items} />
     </div>
   )
 }

@@ -1,15 +1,22 @@
 import "./CartWidget.css"
 import {BsCartCheck} from "react-icons/bs"
+import { Link } from "react-router-dom"
 
 export const CartWidget = () => {
   return (
-    <div className="container-cart">
+    <Link to="/Cart">
+      <div className="container-cart">
             <BsCartCheck 
-              style={{
+                style={{
                 fontSize: "2rem",
-                color: "#fff"
+                color: "black",
               }}
             />
+            
+            <div className="bubble-counter">
+              <span>12</span>
             </div>
+      </div>
+    </Link>
     )
 }

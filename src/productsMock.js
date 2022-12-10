@@ -24,7 +24,7 @@ export const products = [
         price: 1200,
         stock: 10,
         description: "Campari es una bebida alcohólica de grado medio, tonificante y refrescante, calificable como aperitivo, de característico color rojo y sabor amargo.",
-        category: "Aperitivo",
+        category: "Aperitivos",
         img: "https://res.cloudinary.com/dofqoorbp/image/upload/v1670684739/PE006_ktlg9r.jpg"
     },
     {
