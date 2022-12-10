@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import {products} from "../../productsMock"
+import {products} from '../../productsMock'
 import { useParams } from "react-router-dom"
 
 const ItemsDetailContainer = () => {
@@ -9,8 +9,10 @@ const ItemsDetailContainer = () => {
   const {id} = useParams()
 
   useEffect(()=>{
+
     const productSelected = products.find( producto=> producto.id === parseInt(id))
     setProduct(productSelected)
+    
   }, [id])
 
   return (

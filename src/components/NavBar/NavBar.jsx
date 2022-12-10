@@ -4,7 +4,7 @@ import {Link} from "react-router-dom"
 
 const NavBar = () => {
 
-    const nombre = "Todos los productos"
+        const nombre = "Todos los productos"
 
     return (
         <div className="navbar-container">
@@ -26,7 +26,6 @@ const NavBar = () => {
             <CartWidget/>
         </div>
     )
-
 }
 
 export default NavBar;
