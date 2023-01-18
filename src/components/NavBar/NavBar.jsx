@@ -4,8 +4,6 @@ import {Link} from "react-router-dom"
 
 const NavBar = () => {
 
-        const nombre = "Todos los productos"
-
     return (
         <div className="navbar-container">
             <div className="container-logo">
@@ -19,9 +17,9 @@ const NavBar = () => {
             </div>
             <ul className="navbar">
                 <Link className="navbar-item" to="/">Todos los productos</Link>
-                <Link className="navbar-item" to="/category/cerveza">Cerveza</Link>
-                <Link className="navbar-item" to="/category/vodka">Vodka</Link>
-                <Link className="navbar-item" to="/category/aperitivos">Aperitivos</Link>
+                <Link className="navbar-item" to="/Category/Cerveza">Cerveza</Link>
+                <Link className="navbar-item" to="/Category/Vodka">Vodka</Link>
+                <Link className="navbar-item" to="/Category/Aperitivo">Aperitivos</Link>
             </ul>
             <CartWidget/>
         </div>

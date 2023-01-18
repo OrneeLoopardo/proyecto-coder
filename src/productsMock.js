@@ -15,7 +15,7 @@ export const products = [
         price: 900,
         stock: 50,
         description: "Americano Gancia es un aperitivo que se caracteriza por la presencia de sabores herbáceos y cítricos que se combinan con los del vino blanco y el alcohol.",
-        category: "Aperitivos",
+        category: "Aperitivo",
         img: "https://res.cloudinary.com/dofqoorbp/image/upload/v1670684482/00001156.jpg_t9imbo.jpg"
     },
     {
@@ -24,7 +24,7 @@ export const products = [
         price: 1200,
         stock: 10,
         description: "Campari es una bebida alcohólica de grado medio, tonificante y refrescante, calificable como aperitivo, de característico color rojo y sabor amargo.",
-        category: "Aperitivos",
+        category: "Aperitivo",
         img: "https://res.cloudinary.com/dofqoorbp/image/upload/v1670684739/PE006_ktlg9r.jpg"
     },
     {
