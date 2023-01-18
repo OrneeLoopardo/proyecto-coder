@@ -6,18 +6,18 @@ import ItemCount from "../ItemCount/ItemCount"
 import {useParams} from "react-router-dom"
 
 const ItemListContainer = () => {
-  const {categoryName} = useParams()
+  const {CategoryName} = useParams()
 
   const [items, setItems] = useState([])
 
   useEffect(() => {
     const productosFiltered = products.filter(
-      (productos) => productos.category === categoryName
+      (productos) => productos.category === CategoryName
     )
 
     const task = new Promise((resolve, reject) => {
       setTimeout(() => {
-        resolve(categoryName ? productosFiltered : products)
+        resolve(CategoryName ? productosFiltered : products)
       }, 500)
     })
 
@@ -29,7 +29,7 @@ const ItemListContainer = () => {
         console.log("se rechazo")
       })
 
-  }, [categoryName])
+  }, [CategoryName])
 
   return (
     <div className="light">
